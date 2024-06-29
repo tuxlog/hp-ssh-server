@@ -30,5 +30,7 @@ This is the old legacy format of the IP database which can be obtained without a
 After this just start ip2map.py. Depending on the number of ips it may take some time to create the image and store it to hackermap.png. 
 Which shows red circles at the location which attacked. The more often one IP attacks the bigger the circle gets, to get an impression of the amount of tries from this location.
 
+![Example image created by ip2map.py](hackermap.png)
+
 # License
 This piece of software is lincensed under MIT. See LICENSE.md for more information
