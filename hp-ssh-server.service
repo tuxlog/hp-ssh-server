@@ -1,0 +1,15 @@
+[Unit]
+Description=Honeypot SSH Server logging all ssh details
+After=multi-user.target
+
+[Service]
+User=myuser
+Group=myuser
+WorkingDirectory=/home/myuser/hp-ssh-server
+Type=simple
+Restart=always
+ExecStart=/home/myuser/hp-ssh-server/hp-ssh-server.py
+PrivateTmp=true
+
+[Install]
+WantedBy=multi-user.target
