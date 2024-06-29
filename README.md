@@ -6,9 +6,11 @@ One of our VPS got attacked a thousand times per day with brute force ssh attack
 # Installation
 If you want to have your own real ssh server in parallel you have to change the port of your sshd setup in /etc/ssh/sshd_config.
 To run hp-ssh-server on a non root account, you have to redirect connects to ssh port 22 to another port > 1024, e.g. 2222 using something like 
-iptables -A PREROUTING -t nat -p tcp --dport 22 -j REDIRECT --to-port 2222
+
+`iptables -A PREROUTING -t nat -p tcp --dport 22 -j REDIRECT --to-port 2222`
 
 Copy the files to a user directory like /home/myuser/hp-ssh-server
+Create a certificate using ssh-gen `'ssh-keygen -t rsa -f server.key`
 Edit hp-ssh-server and change the directories accordingly
 Copy the systemd file to /lib/systemd/system `sudo cp hp-ssh-server.service /lib/systemd/system/hp-ssh-server.service`
 Enable the service `systemctl enable hp-ssh-server`
