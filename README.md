@@ -15,10 +15,11 @@ Enable the service `systemctl enable hp-ssh-server`
 Start the service `sudo service hp-ssh-server start`
 
 The server starts and writeds all the information in a txt file sshlogins.txt looking like
+
 `2024-06-28 07:19:38;180.101.88.221;58235;"root";"silvestre"`
+
 As you can see it logs the date, ip, port, user and password on one line for every attempt.
 
-Now for the fun part.
 
 # Creating a map of the logon attempts
 First of all you have to fetch the GeoIPCity.dat from https://mailfud.org/geoip-legacy/ and unzip it in the same directory.
